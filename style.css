@@ -1,0 +1,27 @@
+header{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav h2 {
+     display: flex;
+     flex: row-reverse;
+     justify-content: space-around;
+     align-content: left;
+
+     padding-top: 10px;
+     width: 50vw;
+
+  }
+  
+  nav h2 {
+    list-style: none;
+  }
+
+  
+.vl {
+  border-left: 2px;
+ height: 500px;
+}
+
+  
