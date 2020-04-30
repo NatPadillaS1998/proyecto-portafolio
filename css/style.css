@@ -34,6 +34,7 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
 a:hover,
@@ -69,7 +70,8 @@ ul {
   grid-row: 2 / 3;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-  padding: 1em;
+  padding: 1em 0;
+  padding-right: 4px;
 }
 
 /* Main */
@@ -127,8 +129,8 @@ ul {
 
 @media screen and (min-width: 40em) {
   .grid-container {
-    grid-template-columns: 1fr 5fr 4fr;
-    grid-template-rows: 1fr 9fr;
+    grid-template-columns: 70px 5fr 4fr;
+    grid-template-rows: min-content 9fr;
   }
 
   #menu-toggle {
@@ -162,6 +164,23 @@ ul {
 }
 
 /****************************************
+*    Proyectos
+*****************************************/
+@media screen and (min-width: 40em) {
+  .proyecto .main {
+    display: flex;
+    grid-column: 2/4;
+    grid-row: 2;
+    width: 100%;
+    padding: 1em 0 1em 1em;
+  }
+
+  .proyecto .main img {
+    min-width: 584px;
+  }
+}
+
+/****************************************
 *    Helpers
 *****************************************/
 .centrar {
@@ -171,3 +190,6 @@ ul {
 }
 
 /* Ayuda visual temporal */
+.outline {
+  border: 2px dotted blue;
+}
