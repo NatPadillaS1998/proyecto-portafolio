@@ -1,150 +1,173 @@
 @font-face {
-  font-family: "robotoregular";
+  font-family: "Roboto";
   src: url("assets/fonts/robotoregular.woff2") format("woff2");
-  font-weight: normal;
   font-style: normal;
+  font-weight: 400;
+}
+/****************************************
+*    Variables
+*****************************************/
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #0366ee;
+  --link: #0000ee;
+  --hover: #551a8b;
+  --font-family: "Roboto", sans-serif;
 }
 
-/* CSS Resets */
+/****************************************
+*    Base - Elements
+*****************************************/
 html {
-    box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  color: var(--black);
+  background: var(--white);
+  font-size: 100%;
+  font-size: calc(16px + (20 - 16) * ((100vw - 720px) / (1400 - 720)));
+  font-family: "Roboto";
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover,
+a:active {
+  color: var(--hover);
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/****************************************
+*    Components - Common
+*****************************************/
+/* Home */
+.grid-container {
+  display: grid;
+  grid-template-columns: fit-content 1px auto;
+  grid-template-rows: max-content 1fr 5vh;
+  grid-row-gap: 1em;
+  align-items: start;
+  height: 100vh;
+  grid-template-areas:
+    "nav . contact"
+    "header main home-img";
+}
+
+/* Header */
+.header {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  padding: 1em;
+}
+
+/* Main */
+.main {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  border-top: 1px solid var(--black);
+  padding: 1em 2em;
+}
+
+.linea-vertical {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  max-height: 100%;
+}
+
+/* Nav */
+.hide {
+  display: none;
+}
+
+/* Contact */
+.contact {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  justify-self: end;
+  align-self: center;
+  padding: 1em 1em 0 0;
+}
+
+.contact a {
+  color: var(--black);
+}
+
+@media screen and (min-width: 40em) {
+  .contact {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    justify-self: end;
+    align-self: center;
+    padding: 1em 1em 0 0;
   }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
+
+  .contact a {
+    color: var(--black);
   }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  ol,
-  li,
-  pre,
-  blockquote,
-  figure,
-  hr {
-    margin: 0;
-    padding: 0;
+}
+/* Footer */
+.footer {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  justify-self: end;
+  padding-right: 1em;
+}
+
+@media screen and (min-width: 40em) {
+  .grid-container {
+    grid-template-columns: 1fr 5fr 4fr;
+    grid-template-rows: 1fr 9fr;
   }
-  
-  /* No discs from ul */
-  ul {
-    list-style: none;
+
+  #menu-toggle {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
   }
-  
-  input,
-  textarea,
-  select,
-  button {
-    color: inherit;
-    font: inherit;
-    letter-spacing: inherit;
+
+  .header {
+    grid-column: 1;
+    grid-row: 2;
+    height: 100%;
+    text-align: right;
+    align-self: center;
   }
-  
-  input,
-  textarea,
-  button {
-    border: 1px solid gray;
-  }
-  
-  button {
-    border-radius: 0;
-    padding: 0.75em 1em;
-    background-color: transparent;
-  }
-  
-  button * {
-    pointer-events: none;
-  }
-  
-  embed,
-  iframe,
-  img,
-  object,
-  video {
-    display: block;
-    max-width: 100%;
-  }
-  
-  table {
-    table-layout: fixed;
+
+  .main {
+    display: flex;
+    grid-column: 2/4;
+    grid-row: 2;
     width: 100%;
   }
-  
-  [hidden] {
-    display: none;
+  .main p {
+    max-width: 50%;
   }
-  
-  /* noscript styles */
-  noscript {
-    display: block;
-    margin-bottom: 1em;
-    margin-top: 1em;
+
+  .main img {
+    width: 100%;
   }
-  
-  /* Variables - Ejemplo
-   * ===============
-   *
-   * All variables and most of the configuration is defined on this page. */
-  
-  
-  :root {
-    /* Containers */
-    --small: 768px;
-    --medium: 1024px;
-    --large: 1440px;
-    /* Colors */
-    --background: white;
-    --primary-color: #000000;
-    --secondary-color: #FFF502;
-    /* Typography */
-    --font-size: 1rem;
-    --body-font-size: 1rem;
-    --font-style: normal;
-    --font-family: 'Roboto', sans-serif;
-    /* Components - Heading */
-    --heading-font-color: #000000;
-    --heading-font-weight: bold;
-    --heading-font-family: 'robotoregular', sans-serif;
-    /* Components -Heading font size */
-    --h1: 2.25rem;
-    --h2: 2rem;
-    --h3: 1.75rem;
-    --h4: 1.5rem;
-    /* Components - Footer */
-    --footer-font-color: #000000;
-    --footer-bg-color: #FFF502;
-    /* Padding */
-    --padding: 1rem;
-    --margins: 1.5rem;
 }
 
-/* Global */
-body {
-    font-family: var(--font-family);
+/****************************************
+*    Helpers
+*****************************************/
+.centrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-font-size: 36px;
-line-height: 42px;
-}
-
-ul{
-  font-size: 36px;
-}
-
-p{
-  font-size: 22px;
-}
-
-   
-  /* Sections */
-  
-  /* Layouts */
+/* Ayuda visual temporal */
