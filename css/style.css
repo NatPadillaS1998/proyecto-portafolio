@@ -40,7 +40,7 @@ a {
 a:hover,
 a:active {
   color: var(--hover);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 ul {
@@ -165,6 +165,42 @@ ul {
 
 /****************************************
 *    Proyectos
+*****************************************/
+
+@media screen and (min-width: 40em) {
+  .proyectos-list {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .proyectos .main img {
+    min-width: 584px;
+  }
+
+  .proyectos-list ul {
+    font-size: 3em;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .proyectos-list ul li {
+    line-height: 1.5;
+    padding-left: 1em;
+    border: 1px solid black;
+  }
+  .proyectos-list ul li a {
+    color: black;
+  }
+  .proyectos-list ul li a:hover {
+    opacity: 0.7;
+  }
+}
+
+/****************************************
+*    Proyecto
 *****************************************/
 @media screen and (min-width: 40em) {
   .proyecto .main {
