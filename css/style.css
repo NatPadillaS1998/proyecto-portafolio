@@ -51,20 +51,21 @@ ul {
 /****************************************
 *    Components - Common
 *****************************************/
-/* Home */
+/* Layout */
 .grid-container {
+  position: relative;
   display: grid;
-  grid-template-columns: fit-content 1px auto;
-  grid-template-rows: max-content 1fr 5vh;
-  grid-row-gap: 1em;
+  grid-template-columns: 50px 1px auto;
+  grid-template-rows: 50px 1fr 5vh;
   align-items: start;
   height: 100vh;
-  grid-template-areas:
-    "nav . contact"
-    "header main home-img";
 }
 
-/* Header */
+.nav-icon {
+  width: 51px;
+  height: 51px;
+}
+
 .header {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -74,7 +75,6 @@ ul {
   padding-right: 4px;
 }
 
-/* Main */
 .main {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
@@ -88,18 +88,12 @@ ul {
   max-height: 100%;
 }
 
-/* Nav */
-.hide {
-  display: none;
-}
-
-/* Contact */
 .contact {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   justify-self: end;
   align-self: center;
-  padding: 1em 1em 0 0;
+  padding-right: 1em;
 }
 
 .contact a {
@@ -107,6 +101,42 @@ ul {
 }
 
 @media screen and (min-width: 40em) {
+  .grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 74px 1px auto;
+    grid-template-rows: 74px 1fr 5vh;
+    align-items: start;
+    height: 100vh;
+  }
+
+  .nav-icon {
+    width: 75px;
+    height: 75px;
+  }
+
+  .header {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    padding: 1em 0;
+    padding-right: 4px;
+  }
+
+  .main {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    border-top: 1px solid var(--black);
+    padding: 1em 2em;
+  }
+
+  .linea-vertical {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    max-height: 100%;
+  }
+
   .contact {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
@@ -119,6 +149,7 @@ ul {
     color: var(--black);
   }
 }
+
 /* Footer */
 .footer {
   grid-column: 1 / 4;
@@ -173,11 +204,8 @@ ul {
   padding: 0;
 }
 
-.proyectos .main img {
-  width: 100%;
-}
-
 .proyectos img {
+  width: 100%;
   margin-bottom: 1em;
 }
 .proyectos-list ul {
@@ -187,7 +215,7 @@ ul {
 }
 
 .proyectos-list ul li {
-  line-height: 1.5;
+  line-height: 2.5;
   padding-left: 1em;
   border: 1px solid black;
 }
@@ -199,33 +227,21 @@ ul {
 }
 @media screen and (min-width: 40em) {
   .proyectos-list {
-    display: grid;
     grid-template-columns: 2fr 1fr;
-
-    margin: 0;
-    padding: 0;
   }
 
-  .proyectos .main img {
+  .proyectos img {
     min-width: 584px;
   }
 
   .proyectos-list ul {
     font-size: 3em;
-    text-decoration: none;
-    width: 100%;
   }
 
   .proyectos-list ul li {
     line-height: 1.5;
     padding-left: 1em;
     border: 1px solid black;
-  }
-  .proyectos-list ul li a {
-    color: black;
-  }
-  .proyectos-list ul li a:hover {
-    opacity: 0.7;
   }
 }
 
