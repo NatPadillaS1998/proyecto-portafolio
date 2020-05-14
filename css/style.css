@@ -166,7 +166,37 @@ ul {
 /****************************************
 *    Proyectos
 *****************************************/
+.proyectos-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+  padding: 0;
+}
 
+.proyectos .main img {
+  width: 100%;
+}
+
+.proyectos img {
+  margin-bottom: 1em;
+}
+.proyectos-list ul {
+  font-size: 1em;
+  text-decoration: none;
+  width: 100%;
+}
+
+.proyectos-list ul li {
+  line-height: 1.5;
+  padding-left: 1em;
+  border: 1px solid black;
+}
+.proyectos-list ul li a {
+  color: black;
+}
+.proyectos-list ul li a:hover {
+  opacity: 0.7;
+}
 @media screen and (min-width: 40em) {
   .proyectos-list {
     display: grid;
