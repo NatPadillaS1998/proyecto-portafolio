@@ -1,10 +1,12 @@
-// TODO Scripts
-const menu = document.querySelector(".menu-toggle");
+const menu = document.getElementById("btn-menu");
 
-const menuList = menu.querySelector(".menu-list");
+const menuItems = menu.querySelector(".menu-list");
 
-menu.addEventListener("click", menuToggler);
+/* hamburguer.addEventListener("click", showMenu); 
 
-function menuToggler() {
-  menuList.toggleAttribute("hidden");
+function showMenu() {
+  menuItems.toggleAttribute("hidden");
+  console.log(menuItems);
 }
+*/
+/* Menu overlap main */
