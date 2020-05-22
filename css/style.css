@@ -65,6 +65,34 @@ button {
   all: unset;
 }
 
+#menu {
+  position: relative;
+}
+
+.menu-items {
+  position: absolute;
+  background-color: white;
+  transform: translate(47px, 12px);
+}
+
+.menu-items li {
+  font-size: 20px;
+  line-height: 40px;
+  transition: all 1s;
+  outline: 1px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.menu-items li a {
+  color: var(--black);
+}
+
+.menu-items li a:hover {
+  color: blue;
+  background-color: rgb(212, 187, 42);
+}
+
 .nav-icon {
   height: 50px;
   align-self: center;
@@ -119,6 +147,12 @@ button {
   .nav-icon {
     width: 51px;
     height: 51px;
+  }
+
+  .menu-items {
+    position: absolute;
+    background-color: white;
+    transform: translate(62px, 27px);
   }
 
   .header {
@@ -243,7 +277,7 @@ button {
   }
 
   .proyectos-list ul {
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .proyectos-list ul li {

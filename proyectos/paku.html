@@ -12,6 +12,7 @@
       href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2322424/minireset.css"
       rel="stylesheet"
     />
+    <link href="../css/hamburguer.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
   </head>
 
@@ -20,33 +21,13 @@
       <h1>PAKU</h1>
     </header>
 
-    <nav class="nav">
-      <svg
-        class="nav-icon"
-        data-name="Capa 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-      >
-        <defs>
-          <style>
-            .cls-2 {
-              fill: #fff;
-              stroke: #000;
-              stroke-miterlimit: 10;
-              stroke-width: 2px;
-            }
-          </style>
-        </defs>
-        <path fill="#fff" d="M1 1h98v98H1z" />
-        <path
-          d="M127.89 38v96h-96V38h96m2-2h-100v100h100V36z"
-          transform="translate(-29.89 -35.98)"
-        />
-        <path class="cls-2" d="M12 22.5h76M12 50h76M12 77.5h76" />
-      </svg>
-      <ul hidden>
-        <li><a href="http://">HOME</a></li>
-        <li><a href="proyectos.html">PROYECTS</a></li>
+    <button id="menu" class="nav-icon hamburger hamburger--collapse">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+      <ul class="menu-items" hidden>
+        <li><a href="/index.html">HOME</a></li>
+        <li><a href="/proyectos.html">PROYECTS</a></li>
 
         <li>
           <a href="https://www.instagram.com/_nat_____alia/?hl=es-la"
@@ -54,8 +35,7 @@
           >
         </li>
       </ul>
-    </nav>
-
+    </button>
     <svg
       class="linea-vertical"
       xmlns="http://www.w3.org/2000/svg"
@@ -93,5 +73,6 @@
     <footer class="footer">
       <p>&copy; 2020, NATALIA PADILLA.</p>
     </footer>
+    <script src="../js/scripts.js"></script>
   </body>
 </html>

@@ -1,12 +1,9 @@
-const menu = document.getElementById("btn-menu");
+const menu = document.getElementById("menu");
 
-const menuItems = menu.querySelector(".menu-list");
+const menuItems = menu.querySelector(".menu-items");
 
-/* hamburguer.addEventListener("click", showMenu); 
+menu.addEventListener("click", menuToggler);
 
-function showMenu() {
+function menuToggler() {
   menuItems.toggleAttribute("hidden");
-  console.log(menuItems);
 }
-*/
-/* Menu overlap main */
