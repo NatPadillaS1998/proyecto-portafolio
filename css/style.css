@@ -116,6 +116,10 @@ button {
   padding: 1em 2em;
 }
 
+.main p {
+  margin-bottom: 2em;
+}
+
 .linea-vertical {
   grid-column: 2 / 3;
   grid-row: 1 / 4;
@@ -171,6 +175,10 @@ button {
     grid-row: 2 / 3;
     border-top: 1px solid var(--black);
     padding: 1em 2em;
+  }
+
+  .main p {
+    padding-right: 1em;
   }
 
   .linea-vertical {
