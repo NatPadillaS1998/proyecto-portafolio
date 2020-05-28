@@ -93,6 +93,21 @@ button {
   background-color: rgb(212, 187, 42);
 }
 
+.contact-items {
+  position: absolute;
+  background-color: white;
+  transform: translate(47px, 12px);
+}
+
+.contact-items li {
+  font-size: 20px;
+  line-height: 40px;
+  transition: all 1s;
+  outline: 1px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
 .nav-icon {
   height: 50px;
   align-self: center;
@@ -153,10 +168,16 @@ button {
     height: 51px;
   }
 
+  #menu {
+    z-index: 1;
+  }
+
   .menu-items {
     position: absolute;
+
     background-color: white;
     transform: translate(62px, 27px);
+    z-index: 2;
   }
 
   .header {
