@@ -124,20 +124,20 @@ button {
 
 .contact {
   position: relative;
-  transform: translate (-10px, -10px);
 }
 
 .contact-items {
   position: absolute;
   background-color: white;
-  transform: translate (-10px, -10px);
 }
 
 .contact-items li {
+  background-color: white;
   transition: all 1s;
   outline: 1px solid black;
   padding-left: 5px;
   padding-right: 5px;
+  transform: translate(8px, 7px);
 }
 
 .contact-items li a {
@@ -193,7 +193,7 @@ button {
 .contact-items li {
   font-size: 20px;
   line-height: 40px;
-  transform: translate (-10px, -10px);
+  transform: translate(10px, 7px);
 }
 
 .contact a {
