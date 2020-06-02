@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Natalia Padilla | Portafolio</title>
+    <title>Natalia Padilla | PECES SAGRADOS</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
@@ -12,29 +12,39 @@
       href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2322424/minireset.css"
       rel="stylesheet"
     />
-    <link href="../css/hamburguer.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer
+    ></script>
   </head>
 
   <body class="grid-container proyecto">
     <header class="header">
       <h1>PECES SAGRADOS</h1>
     </header>
-    <button id="menu" class="nav-icon hamburger hamburger--collapse">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-      <ul class="menu-items" hidden>
-        <li><a href="/index.html">HOME</a></li>
-        <li><a href="/proyectos.html">PROYECTS</a></li>
-
-        <li>
-          <a href="https://www.instagram.com/_nat_____alia/?hl=es-la"
-            >INSTAGRAM</a
-          >
-        </li>
-      </ul>
-    </button>
+    <nav class="menu">
+      <div x-data="{ isOpen: false }">
+        <button
+          class="hamburguer"
+          @click="isOpen = !isOpen"
+          @keydown.escape="isOpen = false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="menu-list" x-show="isOpen" @click.away="isOpen = false">
+          <li><a href="/index.html">HOME</a></li>
+          <li><a href="/proyectos.html">PROYECTS</a></li>
+          <li>
+            <a href="https://www.instagram.com/_nat_____alia/?hl=es-la"
+              >INSTAGRAM</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <svg
       class="linea-vertical"
@@ -58,22 +68,29 @@
         información y de manera paralela, dar familiaridad entre ellos. Al
         final, elegí a Namazu, un pez gato gigante que genera terremotos, al pez
         koi, que representa amor y amistad, y a Shachihoko, una carpa encargada
-        de generar lluvias. El paso siguiente consistió en atribuir conceptos
-        distintos a cada pez; dichos conceptos me ayudaron a definir cómo se
-        vería cada uno para mantener coherencia entre su forma y su significado.
-        Así mismo, los conceptos de cada pez surgieron a partir de su historia y
-        contexto.
+        de generar lluvias.
       </p>
       <img class="imagen-proyecto" src="../assets/images/pez.png" alt="" />
     </main>
 
-    <div class="contact">
-      <a href="/contacto.html">CONTACT</a>
+    <div class="contact" x-data="{ isOpen: false }">
+      <a
+        class="contacto-link"
+        @click="isOpen = !isOpen"
+        @keydown.escape="isOpen = false"
+        href="#"
+      >
+        CONTACT
+      </a>
+      <ul class="contact-items" x-show="isOpen" @click.away="isOpen = false">
+        <li>
+          <a href="mailto:natpadillas@gmail.com"> natpadillas@gmail.com</a>
+        </li>
+      </ul>
     </div>
 
     <footer class="footer">
       <p>&copy; 2020, NATALIA PADILLA.</p>
     </footer>
-    <script src="../js/scripts.js"></script>
   </body>
 </html>

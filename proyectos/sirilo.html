@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Natalia Padilla | Portafolio</title>
+    <title>Natalia Padilla | SIR.ILO</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
@@ -12,30 +12,40 @@
       href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2322424/minireset.css"
       rel="stylesheet"
     />
-    <link href="../css/hamburguer.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer
+    ></script>
   </head>
 
   <body class="grid-container proyecto">
     <header class="header">
       <h1>SIR.ILO</h1>
     </header>
+    <nav class="menu">
+      <div x-data="{ isOpen: false }">
+        <button
+          class="hamburguer"
+          @click="isOpen = !isOpen"
+          @keydown.escape="isOpen = false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="menu-list" x-show="isOpen" @click.away="isOpen = false">
+          <li><a href="/index.html">HOME</a></li>
+          <li><a href="/proyectos.html">PROYECTS</a></li>
+          <li>
+            <a href="https://www.instagram.com/_nat_____alia/?hl=es-la"
+              >INSTAGRAM</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <button id="menu" class="nav-icon hamburger hamburger--collapse">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-      <ul class="menu-items" hidden>
-        <li><a href="/index.html">HOME</a></li>
-        <li><a href="/proyectos.html">PROYECTS</a></li>
-
-        <li>
-          <a href="https://www.instagram.com/_nat_____alia/?hl=es-la"
-            >INSTAGRAM</a
-          >
-        </li>
-      </ul>
-    </button>
     <svg
       class="linea-vertical"
       xmlns="http://www.w3.org/2000/svg"
@@ -56,24 +66,29 @@
         asesoría de marketing que se categoriza por su naturaleza relajada y
         contemporánea. Elegí la técnica de collage para generar imágenes
         versátiles para su marca y de manera paralela, representar la variedad
-        de sus proyectos. La paleta de color surge a partir de que las creadoras
-        de Sir.Ilo buscan proyectarse como femeninas pero fuertes, relajadas
-        pero responsables. Es por eso que se compone por tonos cálidos y no tan
-        saturados contrastados con otros mucho más brillantes. Para las
-        ilustraciones, utilicé la línea continua para generar rostros y figuras
-        abstractas, la calidad del trazo refuerza el concepto informal y
-        espontáneo de la marca.
+        de sus proyectos.
       </p>
       <img class="imagen-proyecto" src="../assets/images/sir.ilo.jpg" alt="" />
     </main>
 
-    <div class="contact">
-      <a href="/contacto.html">CONTACT</a>
+    <div class="contact" x-data="{ isOpen: false }">
+      <a
+        class="contacto-link"
+        @click="isOpen = !isOpen"
+        @keydown.escape="isOpen = false"
+        href="#"
+      >
+        CONTACT
+      </a>
+      <ul class="contact-items" x-show="isOpen" @click.away="isOpen = false">
+        <li>
+          <a href="mailto:natpadillas@gmail.com"> natpadillas@gmail.com</a>
+        </li>
+      </ul>
     </div>
 
     <footer class="footer">
       <p>&copy; 2020, NATALIA PADILLA.</p>
     </footer>
-    <script src="../js/scripts.js"></script>
   </body>
 </html>

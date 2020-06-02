@@ -1,23 +1,5 @@
-/*
-const menu = document.getElementById("menu");
+const menu = document.querySelector(".menu");
 
-const menuItems = menu.querySelector(".menu-items");
+//navIcon.addEventListener("click", menuToggler);
 
-menu.addEventListener("click", menuToggler);
-
-function menuToggler() {
-  menuItems.toggleAttribute("hidden");
-
-}
-*/
-/*
-const contactLink = document.querySelector(".contacto-link");
-const contactItems = document.querySelector(".contacto-items");
-
-contactLink.addEventListener("click", displayContactInfo);
-
-function displayContactInfo(e) {
-  e.preventDefault();
-  console.log(contactItems);
-}
-*/
+console.log(menu);

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Natalia Padilla | Portafolio</title>
+    <title>Natalia Padilla | LESGAICINEMAD</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
@@ -12,30 +12,39 @@
       href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2322424/minireset.css"
       rel="stylesheet"
     />
-    <link href="../css/hamburguer.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer
+    ></script>
   </head>
 
   <body class="grid-container proyecto">
     <header class="header">
       <h1>LESGAICINEMAD</h1>
     </header>
-
-    <button id="menu" class="nav-icon hamburger hamburger--collapse">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-      <ul class="menu-items" hidden>
-        <li><a href="/index.html">HOME</a></li>
-        <li><a href="/proyectos.html">PROYECTS</a></li>
-
-        <li>
-          <a href="https://www.instagram.com/_nat_____alia/?hl=es-la"
-            >INSTAGRAM</a
-          >
-        </li>
-      </ul>
-    </button>
+    <nav class="menu">
+      <div x-data="{ isOpen: false }">
+        <button
+          class="hamburguer"
+          @click="isOpen = !isOpen"
+          @keydown.escape="isOpen = false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="menu-list" x-show="isOpen" @click.away="isOpen = false">
+          <li><a href="/index.html">HOME</a></li>
+          <li><a href="/proyectos.html">PROYECTS</a></li>
+          <li>
+            <a href="https://www.instagram.com/_nat_____alia/?hl=es-la"
+              >INSTAGRAM</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <svg
       class="linea-vertical"
@@ -57,20 +66,33 @@
         consistió en el diseño de un cartel tipográfico que mostrara la
         programación completa de su 24ª edición, así como el de su página web.
         El reto principal residió en acomodar los títulos, sinopsis, horarios y
-        sedes de todas las categorías presentadas en el festival; así como las
-        sedes oficiales con su respectiva dirección y estación de metro más
-        cercana.
+        sedes de todas las categorías presentadas en el festival (largometraje,
+        cortometraje y documental); así como las sedes oficiales con su
+        respectiva dirección y estación de metro más cercana. El tamaño del
+        cartel es de 60x90, por lo que el aprovechamiento del espacio fue algo
+        clave en su diseño.
       </p>
       <img class="imagen-proyecto" src="../assets/images/lesgai.jpg" alt="" />
     </main>
 
-    <div class="contact">
-      <a href="/contacto.html">CONTACT</a>
+    <div class="contact" x-data="{ isOpen: false }">
+      <a
+        class="contacto-link"
+        @click="isOpen = !isOpen"
+        @keydown.escape="isOpen = false"
+        href="#"
+      >
+        CONTACT
+      </a>
+      <ul class="contact-items" x-show="isOpen" @click.away="isOpen = false">
+        <li>
+          <a href="mailto:natpadillas@gmail.com"> natpadillas@gmail.com</a>
+        </li>
+      </ul>
     </div>
 
     <footer class="footer">
       <p>&copy; 2020, NATALIA PADILLA.</p>
     </footer>
-    <script src="../js/scripts.js"></script>
   </body>
 </html>
